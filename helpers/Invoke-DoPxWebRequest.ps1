@@ -2,7 +2,7 @@
 The DoPx module provides a rich set of commands that extend the automation
 capabilities of the Digital Ocean (DO) cloud service. These commands make it
 easier to manage your Digital Ocean environment from Windows PowerShell. When
-used with the SshPx module, you can manage all aspects of your environment
+used with the LinuxPx module, you can manage all aspects of your environment
 from one shell.
 
 Copyright (c) 2014 Kirk Munro.
@@ -52,10 +52,10 @@ function Invoke-DoPxWebRequest {
         $PassThru = $true
     )
     try {
-        #region Copy the bound parameters to an invokeWebRequestParameters parameter hashtable, dropping the Paging parameters in the process.
+        #region Copy the bound parameters to an invokeWebRequestParameters parameter hashtable, dropping the ShouldProcess and Paging parameters in the process.
 
         [System.Collections.Hashtable]$invokeWebRequestParameters = $PSCmdlet.MyInvocation.BoundParameters
-        foreach ($key in 'First','Skip','IncludeTotalCount') {
+        foreach ($key in 'WhatIf','Confirm','First','Skip','IncludeTotalCount') {
             if ($invokeWebRequestParameters.ContainsKey($key)) {
                 $invokeWebRequestParameters.Remove($key)
             }
@@ -103,6 +103,12 @@ function Invoke-DoPxWebRequest {
             #endregion
         } elseif ((@('Get','Options') -contains $Method) -or
                   ($PSCmdlet.ShouldProcess($Uri, $shouldProcessAction))) {
+            #region Write the details describing the web request being made to the verbose stream.
+
+            Write-Verbose "Sending HTTP request ""${shouldProcessAction}"" to ""${Uri}""."
+
+            #endregion.
+
             #region Send the request to the server, pulling results down one page at a time.
 
             do {

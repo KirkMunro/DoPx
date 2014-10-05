@@ -2,7 +2,7 @@
 The DoPx module provides a rich set of commands that extend the automation
 capabilities of the Digital Ocean (DO) cloud service. These commands make it
 easier to manage your Digital Ocean environment from Windows PowerShell. When
-used with the SshPx module, you can manage all aspects of your environment
+used with the LinuxPx module, you can manage all aspects of your environment
 from one shell.
 
 Copyright (c) 2014 Kirk Munro.
@@ -59,7 +59,7 @@ function New-DoPxSnapshot {
         [ValidateNotNull()]
         [ValidateRange(1,[System.Int32]::MaxValue)]
         [Alias('Id')]
-        [System.Int32]
+        [System.Int32[]]
         $DropletId,
 
         # The name you want to give to the droplet snapshot.

@@ -2,7 +2,7 @@
 The DoPx module provides a rich set of commands that extend the automation
 capabilities of the Digital Ocean (DO) cloud service. These commands make it
 easier to manage your Digital Ocean environment from Windows PowerShell. When
-used with the SshPx module, you can manage all aspects of your environment
+used with the LinuxPx module, you can manage all aspects of your environment
 from one shell.
 
 Copyright (c) 2014 Kirk Munro.
@@ -126,6 +126,16 @@ function New-DoPxDroplet {
     )
     process {
         try {
+            #region Remove any parameters that will not be passed through.
+
+            foreach ($parameterName in 'Name','ImageId','SizeId','RegionId','SshKeys','EnableAutomaticBackup','EnableIPv6','EnablePrivateNetworking','UserData') {
+                if ($PSCmdlet.MyInvocation.BoundParameters.ContainsKey($parameterName)) {
+                    $PSCmdlet.MyInvocation.BoundParameters.Remove($parameterName) > $null
+                }
+            }
+
+            #endregion
+
             foreach ($item in $Name) {
                 Invoke-Snippet -Name ProxyFunction.Begin -Parameters @{
                     CommandName = 'New-DoPxObject'
@@ -145,29 +155,20 @@ function New-DoPxDroplet {
                               size = $SizeId
                              image = $ImageId
                         }
-                        $PSCmdlet.MyInvocation.BoundParameters.Remove('Name') > $null
-                        $PSCmdlet.MyInvocation.BoundParameters.Remove('RegionId') > $null
-                        $PSCmdlet.MyInvocation.BoundParameters.Remove('SizeId') > $null
-                        $PSCmdlet.MyInvocation.BoundParameters.Remove('ImageId') > $null
-                        if ($PSCmdlet.MyInvocation.BoundParameters.ContainsKey('SshKeys') -and $SshKeys) {
+                        if ($SshKeys) {
                             $PSCmdlet.MyInvocation.BoundParameters.Property['ssh_keys'] = $SshKeys
-                            $PSCmdlet.MyInvocation.BoundParameters.Remove('SshKeys') > $null
                         }
-                        if ($PSCmdlet.MyInvocation.BoundParameters.ContainsKey('EnableAutomaticBackup') -and $EnableAutomaticBackup) {
-                            $PSCmdlet.MyInvocation.BoundParameters.Property['backups'] = $EnableAutomaticBackup -as [System.Boolean]
-                            $PSCmdlet.MyInvocation.BoundParameters.Remove('EnableAutomaticBackup') > $null
+                        if ($EnableAutomaticBackup) {
+                            $PSCmdlet.MyInvocation.BoundParameters.Property['backups'] = $true
                         }
-                        if ($PSCmdlet.MyInvocation.BoundParameters.ContainsKey('EnableIPv6') -and $EnableIPv6) {
-                            $PSCmdlet.MyInvocation.BoundParameters.Property['ipv6'] = $EnableIPv6 -as [System.Boolean]
-                            $PSCmdlet.MyInvocation.BoundParameters.Remove('EnableIPv6') > $null
+                        if ($EnableIPv6) {
+                            $PSCmdlet.MyInvocation.BoundParameters.Property['ipv6'] = $true
                         }
-                        if ($PSCmdlet.MyInvocation.BoundParameters.ContainsKey('EnablePrivateNetworking') -and $EnablePrivateNetworking) {
-                            $PSCmdlet.MyInvocation.BoundParameters.Property['private_networking'] = $EnablePrivateNetworking -as [System.Boolean]
-                            $PSCmdlet.MyInvocation.BoundParameters.Remove('EnablePrivateNetworking') > $null
+                        if ($EnablePrivateNetworking) {
+                            $PSCmdlet.MyInvocation.BoundParameters.Property['private_networking'] = $true
                         }
-                        if ($PSCmdlet.MyInvocation.BoundParameters.ContainsKey('UserData') -and $UserData) {
+                        if ($UserData) {
                             $PSCmdlet.MyInvocation.BoundParameters.Property['user_data'] = $UserData
-                            $PSCmdlet.MyInvocation.BoundParameters.Remove('UserData') > $null
                         }                
 
                         #endregion

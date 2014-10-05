@@ -2,7 +2,7 @@
 The DoPx module provides a rich set of commands that extend the automation
 capabilities of the Digital Ocean (DO) cloud service. These commands make it
 easier to manage your Digital Ocean environment from Windows PowerShell. When
-used with the SshPx module, you can manage all aspects of your environment
+used with the LinuxPx module, you can manage all aspects of your environment
 from one shell.
 
 Copyright (c) 2014 Kirk Munro.
@@ -34,17 +34,14 @@ license folder that is included in the SmaPx module. If not, see
 
             Copyright = '© 2014 Kirk Munro'
 
-          Description = 'The DoPx module provides a rich set of commands that extend the automation capabilities of the Digital Ocean (DO) cloud service. These commands make it easier to manage your Digital Ocean environment from Windows PowerShell. When used with the SshPx module, you can manage your entire DigitalOcean environment from one shell.'
+          Description = 'The DoPx module provides a rich set of commands that extend the automation capabilities of the Digital Ocean (DO) cloud service. These commands make it easier to manage your Digital Ocean environment from Windows PowerShell. When used with the LinuxPx module, you can manage your entire DigitalOcean environment from one shell.'
 
     PowerShellVersion = '3.0'
 
       RequiredModules = @(
-                        #'SshPx'
+                        #'LinuxPx' integration coming soon
                         'TypePx'
                         'SnippetPx'
-                        )
-
-     ScriptsToProcess = @(
                         )
 
     FunctionsToExport = @(
@@ -150,5 +147,7 @@ license folder that is included in the SmaPx module. If not, see
                         'helpers\Remove-DoPxObject.ps1'
                         'helpers\Set-DoPxObject.ps1'
                         'license\gpl-3.0.txt'
+                        'scripts\Install-DoPxModule.ps1'
+                        'scripts\Uninstall-DoPxModule.ps1'
                         )
 }
