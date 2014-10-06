@@ -13,9 +13,9 @@ soon as possible.
 
 ### Minimum requirements
 
-PowerShell 4.0
-SnippetPx module
-TypePx module
+- PowerShell 4.0
+- SnippetPx module
+- TypePx module
 
 ### License and Copyright
 
