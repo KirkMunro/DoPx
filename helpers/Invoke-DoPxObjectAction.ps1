@@ -124,7 +124,7 @@ function Invoke-DoPxObjectAction {
 
         #region Initialize the web request headers.
 
-        $headers = Get-DoPxWebRequestHeader -Method Put @accessTokenParameter
+        $headers = Get-DoPxWebRequestHeader @accessTokenParameter
 
         #endregion
 

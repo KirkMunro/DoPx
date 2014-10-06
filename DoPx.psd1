@@ -24,7 +24,7 @@ license folder that is included in the SmaPx module. If not, see
 @{
       ModuleToProcess = 'DoPx.psm1'
 
-        ModuleVersion = '1.0.0.0'
+        ModuleVersion = '1.0.0.1'
 
                  GUID = '2aa000e6-a689-4443-a34e-20be26bfdabb'
 
@@ -36,7 +36,7 @@ license folder that is included in the SmaPx module. If not, see
 
           Description = 'The DoPx module provides a rich set of commands that extend the automation capabilities of the Digital Ocean (DO) cloud service. These commands make it easier to manage your Digital Ocean environment from Windows PowerShell. When used with the LinuxPx module, you can manage your entire DigitalOcean environment from one shell.'
 
-    PowerShellVersion = '3.0'
+    PowerShellVersion = '4.0'
 
       RequiredModules = @(
                         #'LinuxPx' integration coming soon

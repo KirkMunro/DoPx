@@ -118,7 +118,7 @@ function Get-DoPxObject {
         #region Initialize the web request headers.
 
         $accessTokenParameter = $PSCmdlet.GetSplattableParameters('AccessToken')
-        $headers = Get-DoPxWebRequestHeader -Method $method @accessTokenParameter
+        $headers = Get-DoPxWebRequestHeader @accessTokenParameter
 
         #endregion
 

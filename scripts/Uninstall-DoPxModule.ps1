@@ -34,7 +34,7 @@ try {
     #region Get the currently installed module (if there is one).
 
     Write-Progress -Activity 'Uninstalling DoPx' -Status 'Looking for an installed DoPx module.'
-    $module = Get-Module -ListAvailable | Where-Object {$_.Guid -eq [System.Guid]'161b91e7-ca3d-40e2-8d0e-e00b31740f90'}
+    $module = Get-Module -ListAvailable | Where-Object {$_.Guid -eq [System.Guid]'2aa000e6-a689-4443-a34e-20be26bfdabb'}
     if ($module -is [System.Array]) {
         [System.String]$message = 'More than one version of DoPx is installed on this system. This is not supported. Manually remove the versions you are not using and then try again.'
         [System.Management.Automation.SessionStateException]$exception = New-Object -TypeName System.Management.Automation.SessionStateException -ArgumentList $message

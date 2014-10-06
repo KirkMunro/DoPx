@@ -77,6 +77,14 @@ function Invoke-DoPxWebRequest {
 
         #endregion
 
+        #region If we are sending any data to the server, define the ContentType as JSON.
+
+        if (@('Patch','Put','Post') -contains $Method) {
+            $invokeWebRequestParameters['ContentType'] = 'application/json'
+        }
+
+        #endregion
+
         #region Initialize some variables to deal with paging.
 
         # Even if we're not going to get pages of data back, we still want to act as if we will so that

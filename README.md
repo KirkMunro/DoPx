@@ -11,6 +11,12 @@ from one shell.
 Note: The LinuxPx module is currently in development and will be released as
 soon as possible.
 
+### Minimum requirements
+
+PowerShell 4.0
+SnippetPx module
+TypePx module
+
 ### License and Copyright
 
 Copyright (c) 2014 Kirk Munro.

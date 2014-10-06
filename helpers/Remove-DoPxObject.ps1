@@ -98,7 +98,7 @@ function Remove-DoPxObject {
         #region Initialize the web request headers.
 
         $accessTokenParameter = $PSCmdlet.GetSplattableParameters('AccessToken')
-        $headers = Get-DoPxWebRequestHeader -Method Delete @accessTokenParameter
+        $headers = Get-DoPxWebRequestHeader @accessTokenParameter
 
         #endregion
 

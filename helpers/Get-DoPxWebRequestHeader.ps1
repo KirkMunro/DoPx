@@ -25,11 +25,6 @@ function Get-DoPxWebRequestHeader {
     [CmdletBinding()]
     [OutputType([System.Collections.Hashtable])]
     param(
-        [Parameter(Position=0, Mandatory=$true)]
-        [ValidateNotNull()]
-        [Microsoft.PowerShell.Commands.WebRequestMethod]
-        $Method,
-
         [Parameter(Mandatory=$true)]
         [ValidateNotNull()]
         [System.Security.SecureString]
@@ -47,18 +42,8 @@ function Get-DoPxWebRequestHeader {
         $headers = @{
             # Always specify that we want JSON data (even errors should come back as JSON)
             'Accept' = 'application/json'
-            # Identify the user agent
-            'User-Agent' = "DoPx/$((Get-Module -Name DoPx).Version) PowerShell/$($PSVersionTable.PSVersion)"
             # Authorization token
             'Authorization' = "Bearer $([Runtime.InteropServices.Marshal]::PtrToStringAuto($bstrAccessToken))"
-        }
-
-        #endregion
-
-        #region If we are sending any data to the server, define the content-type as JSON.
-
-        if (@('Patch','Put','Post') -contains $Method) {
-            $headers['Content-Type'] = 'application/json'
         }
 
         #endregion
