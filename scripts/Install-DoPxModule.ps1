@@ -53,7 +53,7 @@ try {
     #region Get the currently installed module (if there is one).
 
     Write-Progress -Activity 'Installing DoPx' -Status 'Looking for an installed DoPx module.'
-    $module = Get-Module -ListAvailable | Where-Object {$_.Guid -eq [System.Guid]'161b91e7-ca3d-40e2-8d0e-e00b31740f90'}
+    $module = Get-Module -ListAvailable | Where-Object {$_.Guid -eq [System.Guid]'2aa000e6-a689-4443-a34e-20be26bfdabb'}
     if ($module -is [System.Array]) {
         [System.String]$message = 'More than one version of DoPx is installed on this system. Manually remove the old versions and then try again.'
         [System.Management.Automation.SessionStateException]$exception = New-Object -TypeName System.Management.Automation.SessionStateException -ArgumentList $message
@@ -184,8 +184,8 @@ try {
 # SIG # Begin signature block
 # MIIZIAYJKoZIhvcNAQcCoIIZETCCGQ0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQULZuZFeBwvadb+WQcR8TeSwAT
-# 7XugghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU8tHTBQKzzdeZRL01T7m/D1O8
+# 8P2gghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
 # AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG
 # A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh
 # d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg
@@ -298,23 +298,23 @@ try {
 # aWdpY2VydC5jb20xLjAsBgNVBAMTJURpZ2lDZXJ0IEFzc3VyZWQgSUQgQ29kZSBT
 # aWduaW5nIENBLTECEA3/99JYTi+N6amVWfXCcCMwCQYFKw4DAhoFAKB4MBgGCisG
 # AQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQw
-# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFCwJ
-# yEUJyEuKjeCdVMX9y+VcqBL+MA0GCSqGSIb3DQEBAQUABIIBAL7sF3wJseGTywh5
-# 3deTjiLA5KqoTJ7gG+AC0p38T/IoW7Rvc1oftLiqOMmxAGQ0w26AljyUrFQKKfkZ
-# EHp+VMWdGy0gi9rVEmFOQtpCesKOzrSHSf20urJjzhQefg6Pl7C3ac9nrJ1UltKs
-# lXt3ngqdjrEn/v4dVG9vupUABC+nwJVAqoD7weppfu5LXjBjaOqV2YYGzKfRK8ip
-# fq9wwZl8Y+rYk+bJp+vaoPCeiov5Q1OL+Y3y90FC5bN9x5R/8L4K6uCl26/x+gT3
-# lL35REJHNWCoIgLz+1GyujVegmYVnNS/meMgTGu6lYtJiC9tM/3T9wt5jjOeS6jy
-# BHt3ZtmhggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
+# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFF/U
+# 1/DlCqL3d5PJh9w5o0mOwUHJMA0GCSqGSIb3DQEBAQUABIIBAFYntM4YjYXC6tkS
+# z15tytZcpTvmvEC433nLky1AGU+wvZbAsTAkIECwnSMdS8BkSZVNxJSlSy6IsWaT
+# ZZIowdHaLgnGDAawimq2Bbz2aaZo4EblH0rg0KZ15Y5LBLLNtokMRrS1hkNQbpBz
+# LBv6W5Qtqd1JzAubQzgtvehUs0eywV9G01jfHn7V4DYQnLfpr2GlhR50+/IeOpAN
+# Kx3en9uD5d7tedQKRUFDrvcFil66v5hDThJHxIm/4INdf2yxqBfJnDJPdrenSXjK
+# 6iTjULgJQSkhwNe5STCkRoYODvVz49OloADsjmjgEDKV+hVJ8al5as+3w1l7x+a6
+# XdpTaouhggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
 # EwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xMDAuBgNVBAMTJ1N5
 # bWFudGVjIFRpbWUgU3RhbXBpbmcgU2VydmljZXMgQ0EgLSBHMgIQDs/0OMj+vzVu
 # BNhqmBsaUDAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
-# BgkqhkiG9w0BCQUxDxcNMTQxMDA4MTMwODI1WjAjBgkqhkiG9w0BCQQxFgQUkbCQ
-# 2RydRVE2d2lZIusraQuv4bcwDQYJKoZIhvcNAQEBBQAEggEAQDPY314k4w0t6XvM
-# GrPQAX+7so2Rk2Lv6PIA+QZODKweFnqycj1yDm+gGPx2ML2rXzmhUZP8BHw47RTo
-# GVaJ5ehzcn/6MBatWXZ2h4jJ4i/VIcsFzSSwYQdiWN4X165oEQ/K1DAxaSPjP9vg
-# R2RmEVCaBnCdg45L/0tn6v/Q4nkmmvbezqhJRBKMdJmoBlGLoUPE5nrHdurUDa82
-# qNwDcFwDQzwQU9mgIp5u/WGXzcLTwNfbYme8q84GV4tP6jt0BSuZ1VanxeK10a9E
-# yoteFlKwFZrObrJ9/ihdO/9Zvft4pqvAGkWjfOLz938dCmjgqKRYClc+uabyA9wW
-# 0wAUKQ==
+# BgkqhkiG9w0BCQUxDxcNMTQxMDA4MTQxOTQwWjAjBgkqhkiG9w0BCQQxFgQU42se
+# ql+ZTtXP3NSJ2lPjpakTdpAwDQYJKoZIhvcNAQEBBQAEggEAfI8Euf/D9vbIf/H1
+# 5EfQ3ZHJpOIkzrwy1AA/PDhGsWt+1SC/NoQW5ZEFJXHwJkoKkWlWCIEDytWfUQCf
+# Y9Z/PI+8g+hp2jwFyoyOuRVrspQbWyXuSVCovztUiIdj01zTXRXqmHQBhCorISUQ
+# qU68odYq7Kf24XqNMy16hjd0xcu8YJy6OfWN/ebFHyJ3Q5dOcFZZV150ucSjwbel
+# gKgzT5AZgGy0HUFvzMok/n6W4zSezXmUzuN0yFWL0AHjSiA6gRPDVkEY/JHX9wY4
+# GuXhEpThf7t5jyiEWKYZPSOm3EuneJKq3sUdpOe0Bwf9opPJgvNLNg3qOguIGqFx
+# +x64Qg==
 # SIG # End signature block
