@@ -24,7 +24,7 @@ license folder that is included in the SmaPx module. If not, see
 @{
       ModuleToProcess = 'DoPx.psm1'
 
-        ModuleVersion = '1.0.0.1'
+        ModuleVersion = '1.0.0.2'
 
                  GUID = '2aa000e6-a689-4443-a34e-20be26bfdabb'
 
