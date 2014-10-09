@@ -150,4 +150,14 @@ license folder that is included in the SmaPx module. If not, see
                         'scripts\Install-DoPxModule.ps1'
                         'scripts\Uninstall-DoPxModule.ps1'
                         )
+
+          PrivateData = @{
+                            PSData = @{
+                                Tags = 'DigitalOcean cloud virtual machine droplet IaaS'
+                                LicenseUri = 'http://www.gnu.org/licenses/gpl-3.0.html'
+                                ProjectUri = 'https://github.com/KirkMunro/DoPx'
+                                IconUri = ''
+                                ReleaseNotes = 'This module is based on version 2 of the DigitalOcean API.'
+                            }
+                        }
 }
