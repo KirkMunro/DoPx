@@ -1,7 +1,7 @@
 ﻿<#############################################################################
 The DoPx module provides a rich set of commands that extend the automation
-capabilities of the Digital Ocean (DO) cloud service. These commands make it
-easier to manage your Digital Ocean environment from Windows PowerShell. When
+capabilities of the DigitalOcean (DO) cloud service. These commands make it
+easier to manage your DigitalOcean environment from Windows PowerShell. When
 used with the LinuxPx module, you can manage all aspects of your environment
 from one shell.
 
@@ -140,8 +140,8 @@ Export-ModuleMember -Function Get-DoPxAction
 # SIG # Begin signature block
 # MIIZIAYJKoZIhvcNAQcCoIIZETCCGQ0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUVUZr1RGXzn33JfsVXxnlqNDq
-# FTigghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUTAObpTGZ2UW98Rh6x9UsFf2h
+# oBygghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
 # AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG
 # A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh
 # d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg
@@ -254,23 +254,23 @@ Export-ModuleMember -Function Get-DoPxAction
 # aWdpY2VydC5jb20xLjAsBgNVBAMTJURpZ2lDZXJ0IEFzc3VyZWQgSUQgQ29kZSBT
 # aWduaW5nIENBLTECEA3/99JYTi+N6amVWfXCcCMwCQYFKw4DAhoFAKB4MBgGCisG
 # AQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQw
-# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFHNX
-# eh93k3+0kssZeB872iuKsLkKMA0GCSqGSIb3DQEBAQUABIIBAJB6G+BLvuvbMCpD
-# KSyTAcaOmdgh5XyhhSB/E6RDZQU8mtS5DF7QvUoodivVCwnyTfAamPslJhIvaiC/
-# FVEopbAQ3PQFoyxhj65lfdIhjYRCiu2x0Z+BEmA62MMeQQv4EGBtJSU9em11+A76
-# 52QaadubuZWnZK7j/j8EGJ/rxNgyqrSrP/pfojb2GhJOlze4ZGEu2SeJrPENKCXA
-# EZlWaK4cuQr0ZN5BZ9Ky7SHhakcZz0JTyhCE5xi2O0y42uxfAM/mroLP+lrk+VOb
-# CTKe2KEZ7OREl+/hC1dowouaAa5pisf/PHyZXdFjwQy4KnXZSvKS2TkKTSNeml/p
-# eU6JvFehggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
+# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFLc+
+# ThL2+Y+KWd9TQ1mPywm3ohMIMA0GCSqGSIb3DQEBAQUABIIBADKIAtwCbKFaBRsa
+# hXxcdGQMAa3yPjPa20RJ2BrOCwIV6EUCXn/8MpfoN7Ws5p3G5fvV+l9zaC3OSNmz
+# gfLrXHvFFgMf/qj6Ww7jM+K3sToeV0rVNKjvT2UaOCUMCdKyJZnWZfEhrB+SaZ5a
+# ZlZfKQuS0U+lg7hCvZOyd9V1Nfn0vObCaAAYc5pkdgJ7dkxct0SpaI2Y+HHzhnNY
+# hzCFTNkVJ5SzokMOtTuUzh7/YZvcZ9ysv3Gr2RCt9Svx59F9PoOzQa23N+W2KtEO
+# N5lKunEpF8iINCGZScHPjJAK3o2Ug/4xmuu5ZsLlndEXfVQArRzx7Z4U7PYnlL/H
+# +kdp+8ahggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
 # EwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xMDAuBgNVBAMTJ1N5
 # bWFudGVjIFRpbWUgU3RhbXBpbmcgU2VydmljZXMgQ0EgLSBHMgIQDs/0OMj+vzVu
 # BNhqmBsaUDAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
-# BgkqhkiG9w0BCQUxDxcNMTQxMDA4MTQxOTM3WjAjBgkqhkiG9w0BCQQxFgQUHRVH
-# 3+ERRpKyA0ZWeIzhhvcmVjwwDQYJKoZIhvcNAQEBBQAEggEAEJcOoiDTWHxVsVft
-# hYf82GoGBAvorUmgFBVldo3sglTOc14MK7nU22hA4xQa1ra1FxxlBC1jOa0rHmBO
-# VkLG81w9fWvv1BYWkek/vPu4cf/cO7RLT2iC0xTEmrsJknOKHB2FavxP0dP6H+/d
-# Msi6WL7PtLvmzl58BOWM6+iP1gAfOVsH9XHkO8REuV1+rMP8NyI7Osh+xvSa9KzR
-# 0Zzf2tuK4zd+5B6G+1BovXlTNUo359qzSkehTlhyGBrUlIDuRfqNxyY8t4kbmURj
-# oO0BmznxBmg7Z647r23l4TGOeGWIjsvsu3LPX0FXzZ4sS94Y8ylCwMQjK/pUcsTd
-# 2nAFMw==
+# BgkqhkiG9w0BCQUxDxcNMTQxMDA5MTk1NzMzWjAjBgkqhkiG9w0BCQQxFgQUfhkm
+# MIuXMW8Fb20lLZjWSXD2aLcwDQYJKoZIhvcNAQEBBQAEggEAiZVysXMv1DoLpFXu
+# GJ2frU96ioEvH6w2QFifRSWzwjvytxQU4RWPh2TNTQJL8p+o+FllcOGq1isrQLFv
+# C3BznPggveE60AvCSCoOBEBdihPN9YNwjLza4aAlEapnzmaTSLiip7BviApXHo7z
+# tOAHHJ6MpN1napkiMJOR3T8f/c8GNLvSw2uvvHYfAQOmtxcKLBdjSD7UvgP5O8yc
+# aEeGCh1rHZv2snEJ1KIt6Ka+KbCEoq8ahWopsfYhZZEUWYPwOEV8fHwECSaYqsdS
+# 6Suc8Fvr1FMQQH3nSWImZgYziIBhltzT6YvosNmXhVzEJoX9RzS/gu2aCS/bUlWX
+# ovV+9g==
 # SIG # End signature block

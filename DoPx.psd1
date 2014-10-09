@@ -1,7 +1,7 @@
 ﻿<#############################################################################
 The DoPx module provides a rich set of commands that extend the automation
-capabilities of the Digital Ocean (DO) cloud service. These commands make it
-easier to manage your Digital Ocean environment from Windows PowerShell. When
+capabilities of the DigitalOcean (DO) cloud service. These commands make it
+easier to manage your DigitalOcean environment from Windows PowerShell. When
 used with the LinuxPx module, you can manage all aspects of your environment
 from one shell.
 
@@ -24,7 +24,7 @@ license folder that is included in the SmaPx module. If not, see
 @{
       ModuleToProcess = 'DoPx.psm1'
 
-        ModuleVersion = '1.0.0.3'
+        ModuleVersion = '1.0.0.4'
 
                  GUID = '2aa000e6-a689-4443-a34e-20be26bfdabb'
 
@@ -34,7 +34,7 @@ license folder that is included in the SmaPx module. If not, see
 
             Copyright = '© 2014 Kirk Munro'
 
-          Description = 'The DoPx module provides a rich set of commands that extend the automation capabilities of the Digital Ocean (DO) cloud service. These commands make it easier to manage your Digital Ocean environment from Windows PowerShell. When used with the LinuxPx module, you can manage your entire DigitalOcean environment from one shell.'
+          Description = 'The DoPx module provides a rich set of commands that extend the automation capabilities of the DigitalOcean (DO) cloud service. These commands make it easier to manage your DigitalOcean environment from Windows PowerShell. When used with the LinuxPx module, you can manage your entire DigitalOcean environment from one shell.'
 
     PowerShellVersion = '4.0'
 
@@ -150,12 +150,22 @@ license folder that is included in the SmaPx module. If not, see
                         'scripts\Install-DoPxModule.ps1'
                         'scripts\Uninstall-DoPxModule.ps1'
                         )
+
+          PrivateData = @{
+                            PSData = @{
+                                Tags = 'DigitalOcean cloud virtual machine droplet IaaS'
+                                LicenseUri = 'http://www.gnu.org/licenses/gpl-3.0.html'
+                                ProjectUri = 'https://github.com/KirkMunro/DoPx'
+                                IconUri = ''
+                                ReleaseNotes = 'This module is based on version 2 of the DigitalOcean API.'
+                            }
+                        }
 }
 # SIG # Begin signature block
 # MIIZIAYJKoZIhvcNAQcCoIIZETCCGQ0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUuNTSyLNj02+pHuonvOIdc0Ky
-# UHegghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU4rO629bA519Z60ATA1xDaoIG
+# 0iCgghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
 # AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG
 # A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh
 # d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg
@@ -268,23 +278,23 @@ license folder that is included in the SmaPx module. If not, see
 # aWdpY2VydC5jb20xLjAsBgNVBAMTJURpZ2lDZXJ0IEFzc3VyZWQgSUQgQ29kZSBT
 # aWduaW5nIENBLTECEA3/99JYTi+N6amVWfXCcCMwCQYFKw4DAhoFAKB4MBgGCisG
 # AQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQw
-# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFGxX
-# whb5Dzg8Mc6ABj+dbXF4xzWaMA0GCSqGSIb3DQEBAQUABIIBAKlRYNLqwJdhSEgf
-# VdKGknA2YXHDhWybnsAS+StI23Y12pTKFkzcCCUWzLPufQkcEPiA2NoMrgRozi+i
-# kzA1rfQP7cSpaSh7KzaoxQnWoo9ctmi3PPbXB4yhn7qys6d2uoCaKGmicwyhWltS
-# v9R0wspxOLzGFm96DxWLm0FZVuu2zzGdGsH5SMGSodCHoqh5Xay4Wco+Ag6ikAiP
-# SoyZwommQcMgwyo2w8RaCbkaA2fj8W0y4Bxh/k3uhqynpHngq0MSzPYjemScLKGU
-# ORE3zWusF8BkI0DHS8aBai17EeqJiQEfZGCuo8pPPbM4YFTcIM8cUtzozYftCFod
-# LItVJTehggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
+# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFJQK
+# +DkkY+15CVdirh6YYVE4e8K0MA0GCSqGSIb3DQEBAQUABIIBAAhQomFVjW4BWgle
+# soC/SEz9v2xx2NRlRrW61kWsp0WQpjHWC1+Zz/KggVXMVUeU9okD690EGi5r5Wu0
+# QcL7goy/fXD0QUs9d89mUYxdLsW2XyhnDE4atlQGBvcQvuyddH9ZFCHvAUvcAbCC
+# hDCu7KkyKfQn9Sj09ky1e1ywTF1Q5C/0bFq1BS7csDFRfGPfDPJDq2GpfxOA/SV/
+# 1iTvtng6szbFG5wubiLnGWxxAsWL7bKtwwJi8ebTJy39ZFQCLIwWXjeTKdc1cQ+0
+# 9usyQk6r8+uZvNvtaMpm4WdcQJoAEHLnQVFxcwtmIhlFlaaKVaoyhj2cytP/xzGv
+# DJFBCO2hggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
 # EwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xMDAuBgNVBAMTJ1N5
 # bWFudGVjIFRpbWUgU3RhbXBpbmcgU2VydmljZXMgQ0EgLSBHMgIQDs/0OMj+vzVu
 # BNhqmBsaUDAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
-# BgkqhkiG9w0BCQUxDxcNMTQxMDA4MTQxOTQzWjAjBgkqhkiG9w0BCQQxFgQUbwun
-# gUeswbK7aVXndd1rh5yi1JMwDQYJKoZIhvcNAQEBBQAEggEAP/JXdte1tOClxpEE
-# XOBQN5aGlNTNSMrlTFFdvr6/IiWydxecFDZECEwTlqgc7+Y4a4RQqNWqIfW/K+T8
-# Nktf3pF0YTduHE7n75yQbESC1qQNguI8kpDsotKV1YK0vu0PKXacMFE/3P6WwtjL
-# MV2A6pmcRmL17qIvj1w6xLu/I5Cgc2M87UCO6O0mTtB1jhpZGb4pRDZVg+hqLLG3
-# L/VprJMtbzXKytU+vionkmxQAOdMQS7qU886FAi/TPe856lfK0DJTClPPg3mpKyo
-# GW48+bQib5EXlFf5VanhjO9F1YSxb/BE70bcUeDYbupBfVTgbOP0v8j6jwAVJcKK
-# THRZdQ==
+# BgkqhkiG9w0BCQUxDxcNMTQxMDA5MTk1NzMyWjAjBgkqhkiG9w0BCQQxFgQUULKG
+# k927eN/DAWzNMOaRU29Ooz0wDQYJKoZIhvcNAQEBBQAEggEAW7Aj/d/VgMaPwPtk
+# EPnBaJLp40r6/eh3dXxCNh+TJ+X+Z3PBuyoXlWrsTsc0cSJpjWRBTLIaSXYkG0SG
+# t1+Vyry0qHTP5Q2BacEIYVZnm4uMEADSSymQT3G+xD7GG3M4wwrP5XkV8pwJjQjy
+# F2R2ta21x7GzxxEWuIIcCv+9LGQIKMkR43VOp3MxIwJJXLEU4Nd/lNU7owE6fSGF
+# 2n12owEbCC0mZPnMzjBrwFjzUbCaUh9TTCRL3SWdtCk64LmiT8vraXbTQSNK/3DH
+# LZTQMrO6zrkMJi0oKQUulYEsmkMYol6BtqwrnhD/c/BbFQzEX0Cp+oK3cKw7948R
+# 3h1F8g==
 # SIG # End signature block
