@@ -2,23 +2,22 @@
 The DoPx module provides a rich set of commands that extend the automation
 capabilities of the DigitalOcean (DO) cloud service. These commands make it
 easier to manage your DigitalOcean environment from Windows PowerShell. When
-used with the LinuxPx module, you can manage all aspects of your environment
-from one shell.
+used with the LinuxPx module, you can manage your entire DigitalOcean
+environment from one shell.
 
-Copyright (c) 2014 Kirk Munro.
+Copyright 2014 Kirk Munro
 
-This program is free software: you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation, either version 3 of the License, or (at your option) any later
-version.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+    http://www.apache.org/licenses/LICENSE-2.0
 
-You should have received a copy of the GNU General Public License in the
-license folder that is included in the SmaPx module. If not, see
-<https://www.gnu.org/licenses/gpl.html>.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 #############################################################################>
 
 function Remove-DoPxObject {
@@ -132,8 +131,8 @@ Export-ModuleMember -Function Remove-DoPxObject
 # SIG # Begin signature block
 # MIIZIAYJKoZIhvcNAQcCoIIZETCCGQ0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU6p+W6OaV8s+SmJU53JoCQUmZ
-# Kn2gghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUGArpVdC8b3fglTA4mhCm4C9F
+# xl+gghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
 # AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG
 # A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh
 # d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg
@@ -246,23 +245,23 @@ Export-ModuleMember -Function Remove-DoPxObject
 # aWdpY2VydC5jb20xLjAsBgNVBAMTJURpZ2lDZXJ0IEFzc3VyZWQgSUQgQ29kZSBT
 # aWduaW5nIENBLTECEA3/99JYTi+N6amVWfXCcCMwCQYFKw4DAhoFAKB4MBgGCisG
 # AQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQw
-# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFKtK
-# IF2XBvQZWWo2oqXL+QNmUIBhMA0GCSqGSIb3DQEBAQUABIIBADGBbAYTpM6zgahL
-# 8t+OpyvRvuM/SJKH0c8KGtB1gGJ8O698uWNL48U+zlYCdohfPgrxRmDHxGJhNM02
-# KWsTn6zfA9bZN2ATBDknCTiqwdcXm/AqpI563Y6W5M7x0Gzmr14BptrQUxJ6RVPE
-# kWF71GyScH7LbUw2HVfEFtMPHhEKsPRcB+IbBh0Fom2mjGUA2KgwjcK4/1kMuWNH
-# XiFxSxtZLK5crdhR1LmtyA5QCrZw2lLKLhZdUYd1Z/giRJmNGfNUzsLfYuI269XX
-# 5NDLDGRm4qmxoqvrshiw/MyIsyfCDkYr25k38cU+JRBCQPQ7mZn0YOGrDsWUvC9E
-# V4pfKfqhggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
+# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFMlX
+# XM2q+R/GUHIpxenunyKQ015WMA0GCSqGSIb3DQEBAQUABIIBAFWBtqF//4Qts72X
+# 6BPhvJzFuy915ddK2gwfzPt5RfvSRuYZq6MaOpRaz9iyBH4FAjT2hUCOdLVDt8ho
+# oFOC+2lwwBIavln0LjAavb70WHIccFlH/JD0ey9qhwGCvXUdJfzy1QP7N3sKv1gH
+# xyQDAAkinvMRhcLzQfTIOuP35ocjm8ydmy3WUmKoaznALF2RwPvAwFkxWCd00LWe
+# EMluFMqiRjCbW2qIlcRtxP/Nx+FE8Od99Kg/iSZdb4w8IUBP7+eSXXrNMOBz3Ahx
+# VgI3ubRn847KhmiLQUUMf2oZluEIdaa4A1T45PqXHhRqHYTvtRlkKi7L/rTxacAF
+# IOmM5T2hggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
 # EwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xMDAuBgNVBAMTJ1N5
 # bWFudGVjIFRpbWUgU3RhbXBpbmcgU2VydmljZXMgQ0EgLSBHMgIQDs/0OMj+vzVu
 # BNhqmBsaUDAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
-# BgkqhkiG9w0BCQUxDxcNMTQxMDA5MTk1NzM3WjAjBgkqhkiG9w0BCQQxFgQUtVHn
-# JYA7+jrJY5nvjrWXFjZEkG4wDQYJKoZIhvcNAQEBBQAEggEAiAdxDFCi8v7q5XjK
-# EEekMKU9GKK5q3rj1u7ffF/DoKy4qd7bL/MSIGoKpJ3C8eR+euHm+rGx15egqpL+
-# RtBScIrj+kQVivUS1MuwbytARbKpT/yHq8zQ9zpG4/V+cgPkZOq+/QVoY3khUT3E
-# B9NOCXyR/oSun7nf2G3S+FHvEB/zcs90TMOxeid+k0Q+8CAXXMUS2rhGq4fMY+nH
-# MtX4gWi481l78U2qNgHgECdyn8fcr8L5GC4Gz0pLkIArXV1tdww4hOQwgn+EElel
-# avo5tIuqMQwQrKBTwLoaONV5gIyGmNg9S4+89ZWmmw4+fkrd4b3pkRmzqrjMwVsJ
-# d+OB3A==
+# BgkqhkiG9w0BCQUxDxcNMTQxMDE0MDUxMTA0WjAjBgkqhkiG9w0BCQQxFgQUlB+B
+# 9TJteEpGo5hTrLBF8m67J34wDQYJKoZIhvcNAQEBBQAEggEAddIMobKgtY714UOo
+# xftOG8MB0n3PYFoIgYMl9LGP5X5ghT1grFon44qzfzPDkbKzTh42wLB8FG51ScoT
+# qZD1syr6CCUYUqaI0BsbNIrFrDuloI0mIcJ0KLGZAB6J6elrlv/ZWvryGyXMSyWj
+# 9co/BG4a/Xplr6saXRLUucLYnvoh4BRxkVM4yXVKnm6v9okrxS4bafjgtmrNOINE
+# eBExvWfVYmfsTiH8c2R/4bUmTbwyNcWXEhqyfQ4jgfZOjPozWhaFk9H9QPBcWRSX
+# WqK8HUIxpZ64d4LExPjg7LKIMJ6a9jFCS4hw+wfQ21VM8U9/cx+OIihL0QSUMhnT
+# FcxvzA==
 # SIG # End signature block

@@ -2,29 +2,28 @@
 The DoPx module provides a rich set of commands that extend the automation
 capabilities of the DigitalOcean (DO) cloud service. These commands make it
 easier to manage your DigitalOcean environment from Windows PowerShell. When
-used with the LinuxPx module, you can manage all aspects of your environment
-from one shell.
+used with the LinuxPx module, you can manage your entire DigitalOcean
+environment from one shell.
 
-Copyright (c) 2014 Kirk Munro.
+Copyright 2014 Kirk Munro
 
-This program is free software: you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation, either version 3 of the License, or (at your option) any later
-version.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+    http://www.apache.org/licenses/LICENSE-2.0
 
-You should have received a copy of the GNU General Public License in the
-license folder that is included in the SmaPx module. If not, see
-<https://www.gnu.org/licenses/gpl.html>.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 #############################################################################>
 
 @{
       ModuleToProcess = 'DoPx.psm1'
 
-        ModuleVersion = '1.0.0.4'
+        ModuleVersion = '1.0.0.5'
 
                  GUID = '2aa000e6-a689-4443-a34e-20be26bfdabb'
 
@@ -32,7 +31,7 @@ license folder that is included in the SmaPx module. If not, see
 
           CompanyName = 'Poshoholic Studios'
 
-            Copyright = '© 2014 Kirk Munro'
+            Copyright = 'Copyright 2014 Kirk Munro'
 
           Description = 'The DoPx module provides a rich set of commands that extend the automation capabilities of the DigitalOcean (DO) cloud service. These commands make it easier to manage your DigitalOcean environment from Windows PowerShell. When used with the LinuxPx module, you can manage your entire DigitalOcean environment from one shell.'
 
@@ -94,6 +93,8 @@ license folder that is included in the SmaPx module. If not, see
              FileList = @(
                         'DoPx.psd1'
                         'DoPx.psm1'
+                        'LICENSE'
+                        'NOTICE'
                         'functions\Add-DoPxDomain.ps1'
                         'functions\Add-DoPxDnsRecord.ps1'
                         'functions\Add-DoPxSshKey.ps1'
@@ -146,7 +147,6 @@ license folder that is included in the SmaPx module. If not, see
                         'helpers\New-DoPxObject.ps1'
                         'helpers\Remove-DoPxObject.ps1'
                         'helpers\Set-DoPxObject.ps1'
-                        'license\gpl-3.0.txt'
                         'scripts\Install-DoPxModule.ps1'
                         'scripts\Uninstall-DoPxModule.ps1'
                         )
@@ -154,7 +154,7 @@ license folder that is included in the SmaPx module. If not, see
           PrivateData = @{
                             PSData = @{
                                 Tags = 'DigitalOcean cloud virtual machine droplet IaaS'
-                                LicenseUri = 'http://www.gnu.org/licenses/gpl-3.0.html'
+                                LicenseUri = 'http://apache.org/licenses/LICENSE-2.0.txt'
                                 ProjectUri = 'https://github.com/KirkMunro/DoPx'
                                 IconUri = ''
                                 ReleaseNotes = 'This module is based on version 2 of the DigitalOcean API.'
@@ -164,8 +164,8 @@ license folder that is included in the SmaPx module. If not, see
 # SIG # Begin signature block
 # MIIZIAYJKoZIhvcNAQcCoIIZETCCGQ0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU4rO629bA519Z60ATA1xDaoIG
-# 0iCgghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUnjNym1lSU2OwTZxwkz9Bchst
+# lT6gghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
 # AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG
 # A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh
 # d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg
@@ -278,23 +278,23 @@ license folder that is included in the SmaPx module. If not, see
 # aWdpY2VydC5jb20xLjAsBgNVBAMTJURpZ2lDZXJ0IEFzc3VyZWQgSUQgQ29kZSBT
 # aWduaW5nIENBLTECEA3/99JYTi+N6amVWfXCcCMwCQYFKw4DAhoFAKB4MBgGCisG
 # AQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQw
-# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFJQK
-# +DkkY+15CVdirh6YYVE4e8K0MA0GCSqGSIb3DQEBAQUABIIBAAhQomFVjW4BWgle
-# soC/SEz9v2xx2NRlRrW61kWsp0WQpjHWC1+Zz/KggVXMVUeU9okD690EGi5r5Wu0
-# QcL7goy/fXD0QUs9d89mUYxdLsW2XyhnDE4atlQGBvcQvuyddH9ZFCHvAUvcAbCC
-# hDCu7KkyKfQn9Sj09ky1e1ywTF1Q5C/0bFq1BS7csDFRfGPfDPJDq2GpfxOA/SV/
-# 1iTvtng6szbFG5wubiLnGWxxAsWL7bKtwwJi8ebTJy39ZFQCLIwWXjeTKdc1cQ+0
-# 9usyQk6r8+uZvNvtaMpm4WdcQJoAEHLnQVFxcwtmIhlFlaaKVaoyhj2cytP/xzGv
-# DJFBCO2hggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
+# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFNag
+# wIsGdd71Qi5Xwrl7hBCbQu1yMA0GCSqGSIb3DQEBAQUABIIBAKxICLdSeO+R8mT2
+# ig8aL8MOUma4kOrzMLQz0W5GSBBRG/U6OD1SWk27DIvEUYq6mfeDvcNe7UGWOU5c
+# KFrBjAyZ0g5ZRTdnUFKGgIEo2AKTbXTqWC0Zo8kdEWwsWnXeEge4cNdfGqDVrF7F
+# 2fl24RT8f1jOzTKvTU/mc2Or3zFlk8NfOUuZNcTDQ+aeG42tf+zIbtoF3XsID+ZY
+# yQujC9B67/udxCgNuDS6yC31EZdY9k3ruA4MIHaR+hZl2f5gdFKwc4+WZVDwSPGf
+# Lf4Q+gki34faMuh6E6Lz/bUeZj86kdMcSFqgoSIPdegi00HK32sAWbsqlfFaMGu7
+# ah6AthqhggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
 # EwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xMDAuBgNVBAMTJ1N5
 # bWFudGVjIFRpbWUgU3RhbXBpbmcgU2VydmljZXMgQ0EgLSBHMgIQDs/0OMj+vzVu
 # BNhqmBsaUDAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
-# BgkqhkiG9w0BCQUxDxcNMTQxMDA5MTk1NzMyWjAjBgkqhkiG9w0BCQQxFgQUULKG
-# k927eN/DAWzNMOaRU29Ooz0wDQYJKoZIhvcNAQEBBQAEggEAW7Aj/d/VgMaPwPtk
-# EPnBaJLp40r6/eh3dXxCNh+TJ+X+Z3PBuyoXlWrsTsc0cSJpjWRBTLIaSXYkG0SG
-# t1+Vyry0qHTP5Q2BacEIYVZnm4uMEADSSymQT3G+xD7GG3M4wwrP5XkV8pwJjQjy
-# F2R2ta21x7GzxxEWuIIcCv+9LGQIKMkR43VOp3MxIwJJXLEU4Nd/lNU7owE6fSGF
-# 2n12owEbCC0mZPnMzjBrwFjzUbCaUh9TTCRL3SWdtCk64LmiT8vraXbTQSNK/3DH
-# LZTQMrO6zrkMJi0oKQUulYEsmkMYol6BtqwrnhD/c/BbFQzEX0Cp+oK3cKw7948R
-# 3h1F8g==
+# BgkqhkiG9w0BCQUxDxcNMTQxMDE0MDUxMTAwWjAjBgkqhkiG9w0BCQQxFgQUalgX
+# /qGmQYOHwJ8en+HCe+SF17MwDQYJKoZIhvcNAQEBBQAEggEAU34bvb32wb2DHmXq
+# 1Ff1bQnJytdG1evSXy6vHehLtuqNgyhH04dTT2QhSS4qe2Vdjfq71kVz1C+80o4h
+# h5oASR7Xa/QOXIdrJrGjJu1EnDxUPNzLQ1rIBY3TAWUxBKnUZl/uEkAIVwIOqOaW
+# tGzlXS53zvY2TfS4adZeHC6zSwX64FE8F4ZQzjaOSjfc3Z9nhtuDNSi4ndQ2anzO
+# vdFZY3kI2rXYZWWEz+IfSvCNmJH9JNMBE+ACluLEFHD+4975DhUYkemh2XxA6PLB
+# r8TkKHvcbvYb0vm2QHtZDHQN4hQL0BkcutvRdno+UZir65yLEn4pqUdecFeHWH9n
+# ZSchrA==
 # SIG # End signature block

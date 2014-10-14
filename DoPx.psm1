@@ -2,23 +2,22 @@
 The DoPx module provides a rich set of commands that extend the automation
 capabilities of the DigitalOcean (DO) cloud service. These commands make it
 easier to manage your DigitalOcean environment from Windows PowerShell. When
-used with the LinuxPx module, you can manage all aspects of your environment
-from one shell.
+used with the LinuxPx module, you can manage your entire DigitalOcean
+environment from one shell.
 
-Copyright (c) 2014 Kirk Munro.
+Copyright 2014 Kirk Munro
 
-This program is free software: you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation, either version 3 of the License, or (at your option) any later
-version.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+    http://www.apache.org/licenses/LICENSE-2.0
 
-You should have received a copy of the GNU General Public License in the
-license folder that is included in the SmaPx module. If not, see
-<https://www.gnu.org/licenses/gpl.html>.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 #############################################################################>
 
 #region Initialize the module.
@@ -32,8 +31,6 @@ Invoke-Snippet -Name Module.Initialize
 $DigitalOceanEndpointUri = 'https://api.digitalocean.com/v2'
 
 #endregion
-
-Update-TypeData -Force -TypeName digitalocean.action -MemberName duration -MemberType ScriptProperty -Value {if ($this.completed_at -ne $null) {$this.completed_at - $this.started_at}}
 
 #region Import helper (private) function definitions.
 
@@ -50,14 +47,11 @@ Invoke-Snippet -Name ScriptFile.Import -Parameters @{
 }
 
 #endregion
-
-$PSModule.OnRemove = {
-}
 # SIG # Begin signature block
 # MIIZIAYJKoZIhvcNAQcCoIIZETCCGQ0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUHdtWhhLiRNmLrYZTNvnlPa1f
-# 3zKgghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUcRdja4AU24OFnhDjHn+xmxyX
+# 4U+gghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
 # AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG
 # A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh
 # d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg
@@ -170,23 +164,23 @@ $PSModule.OnRemove = {
 # aWdpY2VydC5jb20xLjAsBgNVBAMTJURpZ2lDZXJ0IEFzc3VyZWQgSUQgQ29kZSBT
 # aWduaW5nIENBLTECEA3/99JYTi+N6amVWfXCcCMwCQYFKw4DAhoFAKB4MBgGCisG
 # AQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQw
-# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFP8U
-# Qgixj4O2fwS43Mb7Z0f++7zZMA0GCSqGSIb3DQEBAQUABIIBACEjBZXy4t1cm72x
-# Us976gF2As1Ha/exOMx90SmTg/H2CQ+obvdVL6QwBB40yMeOcHEMvFxhjxKZxp7t
-# qlZn7UWCX6sk2otK0JsKoIFMt0Euyub4YC9RUTyWmfeJNoSdZl2X6uKfXBnQATaP
-# /wsg0GB1rLXH9TvAIIBzfnrQRfPbG1GVW5/E8oeM0HcjS+VVbwJSZbs35R5ekP9u
-# DeefzyVh9NHlNpGrR4A0p25Clz9W+NSoQe5EUvL0zhVDPengMOQMzNOX0nJuqsBE
-# b2BdQRPy43mswEH8ujNtDfaCIgCyCx7RQ09nXWh2AgSVlj1i8NitvDsFrKR7h4fD
-# nzJmypqhggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
+# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFPa/
+# JdFya/IDfAFhEaYg4R6xjCiPMA0GCSqGSIb3DQEBAQUABIIBABXcQpGNsrJwxLc2
+# FVVwgEurlbgWCqTgB8WpYJ0O8EqlPOr++1FoRPq+OxsSYA/S/dc+0ToiMVSup9jn
+# wDc48pc6DHtNj//3sOBktKe3SWNJZCODHqPVGsa2gP3tefNAPoq7q9HUZdZnWSNG
+# duCgeIBluwNjOdZlO2c8SNgRNuMxuM1bTwRdZm1W6jqVP7VIWaRf/ukDCvFDv0jH
+# WRfLRPqjctrEKySDDddkkOQQm0tXdwewcYOB5cp6Xn3MxSNrHI+C5Mh2iu1q35zu
+# aBslBjrsSTltRYjBsC/y7ZgMnxLTmWlC5/d4PF/FxK3+3M1Cxkl+U8D07ODX2aAA
+# diwsdnChggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
 # EwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xMDAuBgNVBAMTJ1N5
 # bWFudGVjIFRpbWUgU3RhbXBpbmcgU2VydmljZXMgQ0EgLSBHMgIQDs/0OMj+vzVu
 # BNhqmBsaUDAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
-# BgkqhkiG9w0BCQUxDxcNMTQxMDA5MTk1NzMyWjAjBgkqhkiG9w0BCQQxFgQUxNPM
-# wgWUKo6mgccWRH6NZhj01oQwDQYJKoZIhvcNAQEBBQAEggEAeL5tF0Jl/8XP7AhK
-# PflWFrUcnmMwsm7JGNraZrqG43ZlYLuakEtyrejwEHKDMNz+9PEYelhJ/f9B1aps
-# TdqqZ/aVq7Ocmo8mQBBH4BTaWcgaw2ow3iROkjshCMBV8K9SrbvwYRyUeE2/fV1c
-# NLBO8sxugkijAX4C1PK3ldOexUuIVw0wXVKnvxfh5Ubuvbzc7ySkJNMFNPpjFBzf
-# yytoq/DinVhC5qk9sGmAVfQ1pv7pywNiCcWgue6+8xinDW272ynukwvGlRkJwPN6
-# KjBLAlSQjkH4sIkpvjKepzZRtdIVShy6DxYsslPRQwR4U9lTpwz9q939qWYEupdp
-# /tsu7g==
+# BgkqhkiG9w0BCQUxDxcNMTQxMDE0MDUxMTAwWjAjBgkqhkiG9w0BCQQxFgQUDeRH
+# vHyWDvmSgiHHDQ/2Es5jR6kwDQYJKoZIhvcNAQEBBQAEggEAWcdOkoAFeM2zDkmy
+# Pn/K8lCsBDKL6q7rXzNjzcnrstioyp3wpOIy42Hes//yZs7J/2rrfSYBqKu0fCH8
+# tmDfGOIpZSiq+EjmleP5q2rYVcSTsBxueElG63KJL+GBL5dE2fx6tqKSMI0Uqthy
+# waxj7NeNSnhZ6/Dlbel0CT1qO0TAfmIqbmKPmuIZmHigvzhnCYDoCxpbusMv6/po
+# ezqLskx7gTWJtaJR3FQajQIlvb0Qwg0+0wd5a5SWDKwv6z3zmasrejZQ8kRrJS/y
+# No5z5e0mg6L9jd31eoVpVtIW0jj42uy5dCvHCXamxNFh+EXq3Gztol1dyjb4iFZ5
+# iBSqgA==
 # SIG # End signature block
