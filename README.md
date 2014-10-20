@@ -14,8 +14,8 @@ soon as possible.
 ### Minimum requirements
 
 - PowerShell 4.0
-- SnippetPx module
 - TypePx module
+- SnippetPx module
 
 ### License and Copyright
 
@@ -32,6 +32,48 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+### Installing the DoPx module
+
+DoPx is dependent on the TypePx and SnippetPx modules. You can download
+and install the latest versions of DoPx, TypePx and SnippetPx using any
+of the following methods:
+
+#### PowerShellGet
+
+If you don't know what PowerShellGet is, it's the way of the future for PowerShell
+package management. If you're curious to find out more, you should read this:
+<a href="http://blogs.msdn.com/b/mvpawardprogram/archive/2014/10/06/package-management-for-powershell-modules-with-powershellget.aspx" target="_blank">Package Management for PowerShell Modules with PowerShellGet</a>
+
+Note that these commands require that you have the PowerShellGet module installed
+on the system where they are invoked.
+
+```powershell
+# If you don’t have DoPx installed already and you want to install it for all
+# all users (recommended, requires elevation)
+Install-Module DoPx,TypePx,SnippetPx
+
+# If you don't have DoPx installed already and you want to install it for the
+# current user only
+Install-Module DoPx,TypePx,SnippetPx -Scope CurrentUser
+
+# If you have DoPx installed and you want to update it
+Update-Module
+```
+
+#### PowerShell 3.0 or Later
+
+To install from PowerShell 3.0 or later, open a native PowerShell console (not ISE,
+unless you want it to take longer), and invoke one of the following commands:
+
+```powershell
+# If you want to install DoPx for all users or update a version already installed
+# (recommended, requires elevation for new install for all users)
+& ([scriptblock]::Create((iwr -uri http://tinyurl.com/Install-ModuleFromGitHub).Content)) -ModuleName DoPx,TypePx,SnippetPx
+
+# If you want to install DoPx for the current user
+& ([scriptblock]::Create((iwr -uri http://tinyurl.com/Install-ModuleFromGitHub).Content)) -ModuleName DoPx,TypePx,SnippetPx -Scope CurrentUser
+```
 
 ### Using the DoPx module
 
