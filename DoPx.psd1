@@ -23,7 +23,7 @@ limitations under the License.
 @{
       ModuleToProcess = 'DoPx.psm1'
 
-        ModuleVersion = '1.0.0.5'
+        ModuleVersion = '1.0.0.6'
 
                  GUID = '2aa000e6-a689-4443-a34e-20be26bfdabb'
 
@@ -40,6 +40,9 @@ limitations under the License.
       RequiredModules = @(
                         #'LinuxPx' integration coming soon
                         'TypePx'
+                        )
+
+        NestedModules = @(
                         'SnippetPx'
                         )
 
