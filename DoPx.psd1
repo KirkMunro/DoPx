@@ -23,7 +23,7 @@ limitations under the License.
 @{
       ModuleToProcess = 'DoPx.psm1'
 
-        ModuleVersion = '1.0.0.6'
+        ModuleVersion = '1.0.0.7'
 
                  GUID = '2aa000e6-a689-4443-a34e-20be26bfdabb'
 
@@ -150,8 +150,6 @@ limitations under the License.
                         'helpers\New-DoPxObject.ps1'
                         'helpers\Remove-DoPxObject.ps1'
                         'helpers\Set-DoPxObject.ps1'
-                        'scripts\Install-DoPxModule.ps1'
-                        'scripts\Uninstall-DoPxModule.ps1'
                         )
 
           PrivateData = @{
