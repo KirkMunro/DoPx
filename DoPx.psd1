@@ -23,7 +23,7 @@ limitations under the License.
 @{
       ModuleToProcess = 'DoPx.psm1'
 
-        ModuleVersion = '1.0.0.7'
+        ModuleVersion = '1.0.0.8'
 
                  GUID = '2aa000e6-a689-4443-a34e-20be26bfdabb'
 
