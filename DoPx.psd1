@@ -23,7 +23,7 @@ limitations under the License.
 @{
       ModuleToProcess = 'DoPx.psm1'
 
-        ModuleVersion = '1.0.0.6'
+        ModuleVersion = '1.0.0.7'
 
                  GUID = '2aa000e6-a689-4443-a34e-20be26bfdabb'
 
@@ -150,8 +150,6 @@ limitations under the License.
                         'helpers\New-DoPxObject.ps1'
                         'helpers\Remove-DoPxObject.ps1'
                         'helpers\Set-DoPxObject.ps1'
-                        'scripts\Install-DoPxModule.ps1'
-                        'scripts\Uninstall-DoPxModule.ps1'
                         )
 
           PrivateData = @{
@@ -167,8 +165,8 @@ limitations under the License.
 # SIG # Begin signature block
 # MIIZIAYJKoZIhvcNAQcCoIIZETCCGQ0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUdAz4/elRfZJFIQ1TA6AL7o1K
-# b9CgghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUXe+d2JTe7kbeTVpDgAINa0a3
+# +legghRWMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
 # AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG
 # A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh
 # d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg
@@ -281,23 +279,23 @@ limitations under the License.
 # aWdpY2VydC5jb20xLjAsBgNVBAMTJURpZ2lDZXJ0IEFzc3VyZWQgSUQgQ29kZSBT
 # aWduaW5nIENBLTECEA3/99JYTi+N6amVWfXCcCMwCQYFKw4DAhoFAKB4MBgGCisG
 # AQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQw
-# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFAUc
-# ges+w4Z02VyE0EGLqpcAe8YYMA0GCSqGSIb3DQEBAQUABIIBAJ62IbXtHsrO1u+E
-# etIMKK9UhpuVZ/NU0Kd+9eiR/NlSoQjYEphoE+U55cz/C5Q5wLnFEArXPpx3N6TX
-# 86YheoQHL70tJTg9Bz1xoH1YOkrcv4t4mg2MuWL/N1+5+rnYIIjPvUgW2oAU9XlL
-# VwR7vbvXo8nW8wImHRQntL8DVHyjF7zrQw+KBSRiGdq5nxrS+47oqCzvwQpgbWNF
-# m63BRAqf4wR9FxMJZ0AfmF1S/P3JZ4hS7HQ2LFPaDZj7n9vUe7cyyhYPibVslv7j
-# CnvCm4YYvaG27l58cVhA5K92/sf4VzuDc+qpaKhKjYhoZ6SQVbVOxbKNJ3lYcxaA
-# TV/QseChggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
+# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFMEl
+# fUFGemvwLosle1O1gZfPvSbCMA0GCSqGSIb3DQEBAQUABIIBAKoMoKHBAzLbOJy3
+# +jDDBccFu/196rPSmNFjSP0lS5OoMPpvmkaHjuHAq/PipfodHMonXSJ3hBcx2+0c
+# LCI7jHwlLF/mLILPA+80fop9wuuta/La06cbi2JCLCyB+ZUxNCK6oqGun5ssyAjb
+# JhfkoUrJ0PQQGGr/AiGRqn5po7SpjnJIj8ZtphCX1jSuA6NyRHxsrCWPtt8g3F8P
+# 38wY3TVjJAIl074LZ6vq20wL8ffQ8WUZTO4Shq5p6Xh6VKOVqooOys8DXcvMEWC7
+# 74Q4airrKRgiyM3u2W9BleK61dCCRdnh+fsEQSnUzmcpWnU/nWp15P7QyaGCJv/s
+# UHMjNqehggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYDVQQG
 # EwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xMDAuBgNVBAMTJ1N5
 # bWFudGVjIFRpbWUgU3RhbXBpbmcgU2VydmljZXMgQ0EgLSBHMgIQDs/0OMj+vzVu
 # BNhqmBsaUDAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
-# BgkqhkiG9w0BCQUxDxcNMTQxMTA4MjMzMzE0WjAjBgkqhkiG9w0BCQQxFgQUuaMu
-# GlJk8DXXrEAe1BhUqMe91fQwDQYJKoZIhvcNAQEBBQAEggEATs4h08I0lzi9qLV/
-# 4t0gJvyhcvDb/wSwk3Gx3wGWGLtXv+PYz51judWu+SDwLftszhDnp1kUYuwuwjTc
-# LiQ8w5hY4Efwj8rVpkDZtyutQZR2KOBba650DBgPCDwUuMWhlBjerzcNFonRwzqp
-# mZ5cYGnl++RWGsNAcGF1GJCL6sGz3S0eynHfWs2+olZUHOiw3I7AJdNQYMgO1eOg
-# TpxWBGZt9SS0Y0gba/l2V4R5mYfg9/TM9aLRQT0IvLOpdxz8cBnPkTm/Xfp3Ekmr
-# PG85poiAOn4mPk5+0fq81yeOyqcOGfqHayw/CIOXrdGCQm+6FJwLMoBsNC1K+74C
-# qkIpAg==
+# BgkqhkiG9w0BCQUxDxcNMTQxMTE3MDIyNjU5WjAjBgkqhkiG9w0BCQQxFgQULdCA
+# 6vs/CloYlopPxGk9f+o3wBEwDQYJKoZIhvcNAQEBBQAEggEAnz1BHOyWmKwMgxX+
+# F2KDiw8dJS+a4fHtRONt3RBBOar/OLeIzjcjSNgZUU0zYNSVDR45V3em0DJTXlAo
+# gjquKeSso/Xkzgi+36a1HHc0fLdBO5isrgrW6WXwEZKidx4L/R3e8tb85xcqsII9
+# JuoBCwl+0jyA5pgnS7YDLcQbv/2NfOAotpLcdyMOMpS6fsaYOd5bMfkdWYfiRXyN
+# joAfFWNHtJcevdUz5GHMeRXFnSvvzV0dMPNERSMOGSbC+4KvPZuLYxYTriS3l4um
+# 4b4E+4c2s4OqvyknPw66457dlM21tE6FwbTMzMKFTZmpFHvFXQeHdCIzlyH2hZ6j
+# ODKmYA==
 # SIG # End signature block
